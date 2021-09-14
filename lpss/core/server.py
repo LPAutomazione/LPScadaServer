@@ -17,5 +17,5 @@ class Server(QObject):
         self.scheduler.running = True
 
     def onSchedulerTick(self):
-        #logger.info("Tick!")
+        logger.info("Tick!")
         pass
