@@ -8,17 +8,21 @@ from lpss.settings import settings
 
 
 class Schedule(QObject):
-    index = 0
+    """
+    Encapsulates the function to be run at a specified interval
+    """
+
+    index = 0   # Used to keep track of the Schedule id
 
     def __init__(self, parent=None):
         super(Schedule, self).__init__(parent=parent)
         self.interval: int = 0      # the schedule interval in milliseconds
         self.nextFireUp: int = 0      # when is this schedule going to be fired up? in milliseconds
-        self.fun: Callable or None = None
-        self.i = Schedule.index
-        self.args = None
+        self.fun: Callable or None = None   # the function to be called
+        self.i = Schedule.index     # the schedule Id
+        self.args = None            # Arguments to be passed to the scheduled function
         self.description = ""
-        self.oneShot = False
+        self.oneShot = False        # When True, fire up the function only once
         Schedule.index += 1
 
     def __str__(self):

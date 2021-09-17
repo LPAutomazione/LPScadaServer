@@ -1,4 +1,5 @@
 import sys
+import atexit
 
 from PySide2.QtGui import QGuiApplication
 
@@ -16,4 +17,6 @@ if __name__ == "__main__":
     logger.info("Starting scada")
 
     server = Server()
+    atexit.register(server.cleanup)
+
     sys.exit(app.exec_())

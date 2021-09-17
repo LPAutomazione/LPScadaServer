@@ -6,7 +6,8 @@ from PySide2.QtCore import QObject
 
 DEFAULT_SETTINGS = {
     "DEBUG": True,
-    "timer_granularity": 100
+    "timer_granularity": 100,
+    "wss_port": 1533
 }
 
 

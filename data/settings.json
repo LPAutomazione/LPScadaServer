@@ -1,3 +1,4 @@
 {
-    "timer_granularity": 50
+    "timer_granularity": 50,
+    "wss_port": 1533
 }
